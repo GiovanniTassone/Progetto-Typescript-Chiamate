@@ -1,0 +1,271 @@
+document.addEventListener("DOMContentLoaded", function () {
+    var User = /** @class */ (function () {
+        function User(credito, numeroTelefono, nomeUtente) {
+            this.credito = 0;
+            this.numeroChiamate = 0;
+            this.credito = credito;
+            this.numeroTelefono = numeroTelefono;
+            this.nomeUtente = nomeUtente;
+        }
+        User.prototype.ricarica = function (unaRicarica) {
+            //ricarica il telefono
+            this.credito = this.credito + unaRicarica;
+        };
+        User.prototype.chiamata = function (minutiDurata) {
+            this.numeroChiamate++;
+            if ((+minutiDurata / 60 * 0.20) <= this.credito) {
+                this.credito -= +minutiDurata / 60 * 0.20;
+                this.credito = +this.credito.toFixed(2);
+            }
+            else {
+                alert('Non hai credito, effettua una ricarica per poter chiamare');
+            }
+        }; //che effettua una chiamata di durata in minuti specificata dal parametro esplicito.
+        // Tale metodo dovra' aggiornare la carica disponibile, ed incrementare la memoria contenente il numero di chiamate effettuate dal telefonino.
+        // Si assuma un costo di 0.20 euro per ogni minuto di chiamata,
+        User.prototype.numero404 = function (creditoRes) {
+            alert("il tuo credito residuo \u00E8: ".concat(creditoRes, " \u20AC"));
+        }; //che restituisce il valore della carica disponibile.
+        User.prototype.getNumeroChiamate = function () {
+            alert("Oggi hai effettuato: ".concat(this.numeroChiamate, " chiamate"));
+        }; //che restituisce il valore della variabile d'istanza numeroChiamate.
+        User.prototype.azzeraChiamate = function () {
+            this.numeroChiamate = 0;
+        }; //che azzera la variabile contenente il numero di chiamate effettuate dal telefonino.
+        return User;
+    }());
+    var FirstUser = new User(0, 3506372997, "Kevin");
+    var SecondUser = new User(0, 3654003883, "Jhon");
+    var ThirdUser = new User(0, 3955751034, "Mauro");
+    console.log(FirstUser);
+    var telefono = document.querySelector("#numero");
+    var dieciEuro = document.querySelector("#dieci");
+    var ventiEuro = document.querySelector("#venti");
+    var cinqueantaEuro = document.querySelector("#cinquanta");
+    var centoEuro = document.querySelector("#cento");
+    var login = document.querySelector("#login");
+    var logout = document.querySelector("#logout");
+    var chiamato = document.querySelector("#numeroChiam");
+    var secondi = document.querySelector("#secondiChiam");
+    var inoltra = document.querySelector("#inoltraChiam");
+    var infoChiam = document.querySelector("#infoChiamate");
+    var azzera = document.querySelector("#azzeraChiam");
+    var titoloRicariche = document.querySelector("#ricarica");
+    var cronologia = document.querySelector("#cronologia");
+    if (logout !== null && login !== null || dieciEuro !== null && login !== null || ventiEuro !== null && login !== null || cinqueantaEuro !== null && login !== null || centoEuro !== null && login !== null) {
+        login.addEventListener("click", function () {
+            if (+telefono.value === FirstUser.numeroTelefono || +telefono.value === SecondUser.numeroTelefono || +telefono.value === ThirdUser.numeroTelefono) {
+                dieciEuro.style.display = 'inline-block';
+                ventiEuro.style.display = 'inline-block';
+                cinqueantaEuro.style.display = 'inline-block';
+                centoEuro.style.display = 'inline-block';
+                login.style.display = 'none';
+                telefono.disabled = true;
+                logout.style.display = 'inline-block';
+                chiamato.style.display = 'block';
+                secondi.style.display = 'block';
+                inoltra.style.display = 'block';
+                infoChiam.style.display = 'inline-block';
+                azzera.style.display = 'inline-block';
+                titoloRicariche.style.display = 'inline-block';
+            }
+            else {
+                alert('Non sei nostro cliente');
+            }
+        });
+    }
+    if (logout !== null && login !== null || dieciEuro !== null && login !== null || ventiEuro !== null && login !== null || cinqueantaEuro !== null && login !== null || centoEuro !== null && login !== null) {
+        logout.addEventListener("click", function () {
+            if (dieciEuro.style.display === 'inline-block') {
+                dieciEuro.style.display = 'none';
+                ventiEuro.style.display = 'none';
+                cinqueantaEuro.style.display = 'none';
+                centoEuro.style.display = 'none';
+                login.style.display = 'inline-block';
+                telefono.disabled = false;
+                logout.style.display = 'none';
+                chiamato.style.display = 'none';
+                secondi.style.display = 'none';
+                inoltra.style.display = 'none';
+                infoChiam.style.display = 'none';
+                azzera.style.display = 'none';
+                titoloRicariche.style.display = 'none';
+                telefono.value = '';
+                cronologia.innerHTML = '';
+            }
+        });
+    }
+    dieciEuro.addEventListener("click", function () {
+        if (+telefono.value === FirstUser.numeroTelefono) {
+            FirstUser.ricarica(10);
+            var para = document.createElement("p");
+            para.innerText = "Hai aggiunto 10 euro al tuo saldo!";
+            cronologia.appendChild(para);
+            console.log(FirstUser);
+        }
+        else if (+telefono.value === SecondUser.numeroTelefono) {
+            SecondUser.ricarica(10);
+            var para = document.createElement("p");
+            para.innerText = "Hai aggiunto 10 euro al tuo saldo!";
+            cronologia.appendChild(para);
+            console.log(SecondUser);
+        }
+        else if (+telefono.value === ThirdUser.numeroTelefono) {
+            ThirdUser.ricarica(10);
+            var para = document.createElement("p");
+            para.innerText = "Hai aggiunto 10 euro al tuo saldo!";
+            cronologia.appendChild(para);
+            console.log(ThirdUser);
+        }
+        else {
+            alert("Non sei un nostro cliente");
+        }
+    });
+    ventiEuro.addEventListener("click", function () {
+        if (+telefono.value === FirstUser.numeroTelefono) {
+            FirstUser.ricarica(20);
+            var para = document.createElement("p");
+            para.innerText = "Hai aggiunto 20 euro al tuo saldo!";
+            cronologia.appendChild(para);
+            console.log(FirstUser);
+        }
+        else if (+telefono.value === SecondUser.numeroTelefono) {
+            SecondUser.ricarica(20);
+            var para = document.createElement("p");
+            para.innerText = "Hai aggiunto 20 euro al tuo saldo!";
+            cronologia.appendChild(para);
+            console.log(SecondUser);
+        }
+        else if (+telefono.value === ThirdUser.numeroTelefono) {
+            ThirdUser.ricarica(20);
+            var para = document.createElement("p");
+            para.innerText = "Hai aggiunto 20 euro al tuo saldo!";
+            cronologia.appendChild(para);
+            console.log(ThirdUser);
+        }
+        else {
+            alert("Non sei un nostro cliente");
+        }
+    });
+    cinqueantaEuro.addEventListener("click", function () {
+        if (+telefono.value === FirstUser.numeroTelefono) {
+            FirstUser.ricarica(50);
+            var para = document.createElement("p");
+            para.innerText = "Hai aggiunto 50 euro al tuo saldo!";
+            cronologia.appendChild(para);
+            console.log(FirstUser);
+        }
+        else if (+telefono.value === SecondUser.numeroTelefono) {
+            SecondUser.ricarica(50);
+            var para = document.createElement("p");
+            para.innerText = "Hai aggiunto 50 euro al tuo saldo!";
+            cronologia.appendChild(para);
+            console.log(SecondUser);
+        }
+        else if (+telefono.value === ThirdUser.numeroTelefono) {
+            ThirdUser.ricarica(50);
+            var para = document.createElement("p");
+            para.innerText = "Hai aggiunto 50 euro al tuo saldo!";
+            cronologia.appendChild(para);
+            console.log(ThirdUser);
+        }
+        else {
+            alert("Non sei un nostro cliente");
+        }
+    });
+    centoEuro.addEventListener("click", function () {
+        if (+telefono.value === FirstUser.numeroTelefono) {
+            FirstUser.ricarica(100);
+            var para = document.createElement("p");
+            para.innerText = "Hai aggiunto 100 euro al tuo saldo!";
+            cronologia.appendChild(para);
+            console.log(FirstUser);
+        }
+        else if (+telefono.value === SecondUser.numeroTelefono) {
+            SecondUser.ricarica(100);
+            var para = document.createElement("p");
+            para.innerText = "Hai aggiunto 100 euro al tuo saldo!";
+            cronologia.appendChild(para);
+            console.log(SecondUser);
+        }
+        else if (+telefono.value === ThirdUser.numeroTelefono) {
+            ThirdUser.ricarica(100);
+            var para = document.createElement("p");
+            para.innerText = "Hai aggiunto 100 euro al tuo saldo!";
+            cronologia.appendChild(para);
+            console.log(ThirdUser);
+        }
+        else {
+            alert("Non sei un nostro cliente");
+        }
+    });
+    inoltra.addEventListener('click', function () {
+        if (+telefono.value === FirstUser.numeroTelefono && +chiamato.value !== 404) {
+            FirstUser.chiamata(+secondi.value);
+            console.log(FirstUser);
+        }
+        else if (+telefono.value === SecondUser.numeroTelefono && +chiamato.value !== 404) {
+            SecondUser.chiamata(+secondi.value);
+            console.log(SecondUser);
+        }
+        else if (+telefono.value === ThirdUser.numeroTelefono && +chiamato.value !== 404) {
+            ThirdUser.chiamata(+secondi.value);
+            console.log(ThirdUser);
+        }
+        else if (+telefono.value === FirstUser.numeroTelefono && +chiamato.value === 404) {
+            FirstUser.numero404(FirstUser.credito);
+            var para2 = document.createElement("p");
+            para2.innerText = "Il tuo credito residuo \u00E8 di ".concat(FirstUser.credito, " euro");
+            cronologia.appendChild(para2);
+        }
+        else if (+telefono.value === SecondUser.numeroTelefono && +chiamato.value === 404) {
+            SecondUser.numero404(SecondUser.credito);
+            var para2 = document.createElement("p");
+            para2.innerText = "Il tuo credito residuo \u00E8 di ".concat(SecondUser.credito, " euro");
+            cronologia.appendChild(para2);
+        }
+        else if (+telefono.value === ThirdUser.numeroTelefono && +chiamato.value === 404) {
+            ThirdUser.numero404(ThirdUser.credito);
+            var para2 = document.createElement("p");
+            para2.innerText = "Il tuo credito residuo \u00E8 di ".concat(ThirdUser.credito, " euro");
+            cronologia.appendChild(para2);
+        }
+    });
+    infoChiam.addEventListener('click', function () {
+        if (+telefono.value === FirstUser.numeroTelefono) {
+            var para1 = document.createElement("p");
+            para1.innerText = "Hai effettuato ".concat(FirstUser.numeroChiamate, " chiamate");
+            cronologia.appendChild(para1);
+        }
+        else if (+telefono.value === SecondUser.numeroTelefono) {
+            var para1 = document.createElement("p");
+            para1.innerText = "Hai effettuato ".concat(SecondUser.numeroChiamate, " chiamate");
+            cronologia.appendChild(para1);
+        }
+        else if (+telefono.value === ThirdUser.numeroTelefono) {
+            var para1 = document.createElement("p");
+            para1.innerText = "Hai effettuato ".concat(ThirdUser.numeroChiamate, " chiamate");
+            cronologia.appendChild(para1);
+        }
+    });
+    azzera.addEventListener("click", function () {
+        if (+telefono.value === FirstUser.numeroTelefono) {
+            var para1 = document.createElement("p");
+            para1.innerText = "Hai azzerato le chiamate";
+            cronologia.appendChild(para1);
+            FirstUser.azzeraChiamate();
+        }
+        else if (+telefono.value === SecondUser.numeroTelefono) {
+            var para1 = document.createElement("p");
+            para1.innerText = "Hai azzerato le chiamate";
+            cronologia.appendChild(para1);
+            SecondUser.azzeraChiamate();
+        }
+        else if (+telefono.value === ThirdUser.numeroTelefono) {
+            var para1 = document.createElement("p");
+            para1.innerText = "Hai azzerato le chiamate";
+            cronologia.appendChild(para1);
+            ThirdUser.azzeraChiamate();
+        }
+    });
+});
