@@ -27,6 +27,7 @@ document.addEventListener("DOMContentLoaded", function () {
             this.credito = +this.credito.toFixed(2);
         }else{
             alert('Non hai credito, effettua una ricarica per poter chiamare')
+            this.numeroChiamate--;
         }
     } //che effettua una chiamata di durata in minuti specificata dal parametro esplicito.
     // Tale metodo dovra' aggiornare la carica disponibile, ed incrementare la memoria contenente il numero di chiamate effettuate dal telefonino.
