@@ -205,12 +205,21 @@ document.addEventListener("DOMContentLoaded", function () {
   inoltra.addEventListener('click', function (){
       if (+telefono.value === FirstUser.numeroTelefono && +chiamato.value !== 404 && +chiamato.value >= 0) {
       FirstUser.chiamata(Math.abs(+secondi.value))
+      let para3 = document.createElement("p");
+      para3.innerText = `Chiamata inoltrata con successo!`;
+      cronologia.appendChild(para3);
       console.log(FirstUser);
     } else if (+telefono.value === SecondUser.numeroTelefono && +chiamato.value !== 404 && +chiamato.value >= 0) {
       SecondUser.chiamata(Math.abs(+secondi.value));
+      let para3 = document.createElement("p");
+      para3.innerText = `Chiamata inoltrata con successo!`;
+      cronologia.appendChild(para3);
       console.log(SecondUser);
     } else if (+telefono.value === ThirdUser.numeroTelefono && +chiamato.value !== 404 && +chiamato.value >= 0) {
       ThirdUser.chiamata(Math.abs(+secondi.value))
+      let para3 = document.createElement("p");
+      para3.innerText = `Chiamata inoltrata con successo!`;
+      cronologia.appendChild(para3);
       console.log(ThirdUser);
     }else if (+telefono.value === FirstUser.numeroTelefono && +chiamato.value === 404){
       FirstUser.numero404(FirstUser.credito)
