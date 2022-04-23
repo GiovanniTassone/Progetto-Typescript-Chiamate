@@ -53,6 +53,7 @@ document.addEventListener("DOMContentLoaded", function () {
     var azzera = document.querySelector("#azzeraChiam");
     var titoloRicariche = document.querySelector("#ricarica");
     var cronologia = document.querySelector("#cronologia");
+    var para = document.createElement("p");
     if (logout !== null && login !== null || dieciEuro !== null && login !== null || ventiEuro !== null && login !== null || cinqueantaEuro !== null && login !== null || centoEuro !== null && login !== null) {
         login.addEventListener("click", function () {
             if (+telefono.value === FirstUser.numeroTelefono || +telefono.value === SecondUser.numeroTelefono || +telefono.value === ThirdUser.numeroTelefono) {
@@ -99,23 +100,23 @@ document.addEventListener("DOMContentLoaded", function () {
     dieciEuro.addEventListener("click", function () {
         if (+telefono.value === FirstUser.numeroTelefono) {
             FirstUser.ricarica(10);
-            var para = document.createElement("p");
+            para = document.createElement("p");
             para.innerText = "Hai aggiunto 10 euro al tuo saldo!";
-            cronologia.appendChild(para);
+            cronologia.prepend(para);
             console.log(FirstUser);
         }
         else if (+telefono.value === SecondUser.numeroTelefono) {
             SecondUser.ricarica(10);
-            var para = document.createElement("p");
+            para = document.createElement("p");
             para.innerText = "Hai aggiunto 10 euro al tuo saldo!";
-            cronologia.appendChild(para);
+            cronologia.prepend(para);
             console.log(SecondUser);
         }
         else if (+telefono.value === ThirdUser.numeroTelefono) {
             ThirdUser.ricarica(10);
-            var para = document.createElement("p");
+            para = document.createElement("p");
             para.innerText = "Hai aggiunto 10 euro al tuo saldo!";
-            cronologia.appendChild(para);
+            cronologia.prepend(para);
             console.log(ThirdUser);
         }
         else {
@@ -125,23 +126,23 @@ document.addEventListener("DOMContentLoaded", function () {
     ventiEuro.addEventListener("click", function () {
         if (+telefono.value === FirstUser.numeroTelefono) {
             FirstUser.ricarica(20);
-            var para = document.createElement("p");
+            para = document.createElement("p");
             para.innerText = "Hai aggiunto 20 euro al tuo saldo!";
-            cronologia.appendChild(para);
+            cronologia.prepend(para);
             console.log(FirstUser);
         }
         else if (+telefono.value === SecondUser.numeroTelefono) {
             SecondUser.ricarica(20);
-            var para = document.createElement("p");
+            para = document.createElement("p");
             para.innerText = "Hai aggiunto 20 euro al tuo saldo!";
-            cronologia.appendChild(para);
+            cronologia.prepend(para);
             console.log(SecondUser);
         }
         else if (+telefono.value === ThirdUser.numeroTelefono) {
             ThirdUser.ricarica(20);
-            var para = document.createElement("p");
+            para = document.createElement("p");
             para.innerText = "Hai aggiunto 20 euro al tuo saldo!";
-            cronologia.appendChild(para);
+            cronologia.prepend(para);
             console.log(ThirdUser);
         }
         else {
@@ -151,23 +152,23 @@ document.addEventListener("DOMContentLoaded", function () {
     cinqueantaEuro.addEventListener("click", function () {
         if (+telefono.value === FirstUser.numeroTelefono) {
             FirstUser.ricarica(50);
-            var para = document.createElement("p");
+            para = document.createElement("p");
             para.innerText = "Hai aggiunto 50 euro al tuo saldo!";
-            cronologia.appendChild(para);
+            cronologia.prepend(para);
             console.log(FirstUser);
         }
         else if (+telefono.value === SecondUser.numeroTelefono) {
             SecondUser.ricarica(50);
-            var para = document.createElement("p");
+            para = document.createElement("p");
             para.innerText = "Hai aggiunto 50 euro al tuo saldo!";
-            cronologia.appendChild(para);
+            cronologia.prepend(para);
             console.log(SecondUser);
         }
         else if (+telefono.value === ThirdUser.numeroTelefono) {
             ThirdUser.ricarica(50);
-            var para = document.createElement("p");
+            para = document.createElement("p");
             para.innerText = "Hai aggiunto 50 euro al tuo saldo!";
-            cronologia.appendChild(para);
+            cronologia.prepend(para);
             console.log(ThirdUser);
         }
         else {
@@ -177,23 +178,23 @@ document.addEventListener("DOMContentLoaded", function () {
     centoEuro.addEventListener("click", function () {
         if (+telefono.value === FirstUser.numeroTelefono) {
             FirstUser.ricarica(100);
-            var para = document.createElement("p");
+            para = document.createElement("p");
             para.innerText = "Hai aggiunto 100 euro al tuo saldo!";
-            cronologia.appendChild(para);
+            cronologia.prepend(para);
             console.log(FirstUser);
         }
         else if (+telefono.value === SecondUser.numeroTelefono) {
             SecondUser.ricarica(100);
-            var para = document.createElement("p");
+            para = document.createElement("p");
             para.innerText = "Hai aggiunto 100 euro al tuo saldo!";
-            cronologia.appendChild(para);
+            cronologia.prepend(para);
             console.log(SecondUser);
         }
         else if (+telefono.value === ThirdUser.numeroTelefono) {
             ThirdUser.ricarica(100);
-            var para = document.createElement("p");
+            para = document.createElement("p");
             para.innerText = "Hai aggiunto 100 euro al tuo saldo!";
-            cronologia.appendChild(para);
+            cronologia.prepend(para);
             console.log(ThirdUser);
         }
         else {
@@ -203,42 +204,42 @@ document.addEventListener("DOMContentLoaded", function () {
     inoltra.addEventListener('click', function () {
         if (+telefono.value === FirstUser.numeroTelefono && +chiamato.value !== 404 && +chiamato.value >= 0) {
             FirstUser.chiamata(Math.abs(+secondi.value));
-            var para3 = document.createElement("p");
-            para3.innerText = "Chiamata inoltrata con successo!";
-            cronologia.appendChild(para3);
+            para = document.createElement("p");
+            para.innerText = "Chiamata inoltrata con successo!";
+            cronologia.prepend(para);
             console.log(FirstUser);
         }
         else if (+telefono.value === SecondUser.numeroTelefono && +chiamato.value !== 404 && +chiamato.value >= 0) {
             SecondUser.chiamata(Math.abs(+secondi.value));
-            var para3 = document.createElement("p");
-            para3.innerText = "Chiamata inoltrata con successo!";
-            cronologia.appendChild(para3);
+            para = document.createElement("p");
+            para.innerText = "Chiamata inoltrata con successo!";
+            cronologia.prepend(para);
             console.log(SecondUser);
         }
         else if (+telefono.value === ThirdUser.numeroTelefono && +chiamato.value !== 404 && +chiamato.value >= 0) {
             ThirdUser.chiamata(Math.abs(+secondi.value));
-            var para3 = document.createElement("p");
-            para3.innerText = "Chiamata inoltrata con successo!";
-            cronologia.appendChild(para3);
+            para = document.createElement("p");
+            para.innerText = "Chiamata inoltrata con successo!";
+            cronologia.prepend(para);
             console.log(ThirdUser);
         }
         else if (+telefono.value === FirstUser.numeroTelefono && +chiamato.value === 404) {
             FirstUser.numero404(FirstUser.credito);
-            var para2 = document.createElement("p");
-            para2.innerText = "Il tuo credito residuo \u00E8 di ".concat(FirstUser.credito, " euro");
-            cronologia.appendChild(para2);
+            para = document.createElement("p");
+            para.innerText = "Il tuo credito residuo \u00E8 di ".concat(FirstUser.credito, " euro");
+            cronologia.prepend(para);
         }
         else if (+telefono.value === SecondUser.numeroTelefono && +chiamato.value === 404) {
             SecondUser.numero404(SecondUser.credito);
-            var para2 = document.createElement("p");
-            para2.innerText = "Il tuo credito residuo \u00E8 di ".concat(SecondUser.credito, " euro");
-            cronologia.appendChild(para2);
+            para = document.createElement("p");
+            para.innerText = "Il tuo credito residuo \u00E8 di ".concat(SecondUser.credito, " euro");
+            cronologia.prepend(para);
         }
         else if (+telefono.value === ThirdUser.numeroTelefono && +chiamato.value === 404) {
             ThirdUser.numero404(ThirdUser.credito);
-            var para2 = document.createElement("p");
-            para2.innerText = "Il tuo credito residuo \u00E8 di ".concat(ThirdUser.credito, " euro");
-            cronologia.appendChild(para2);
+            para = document.createElement("p");
+            para.innerText = "Il tuo credito residuo \u00E8 di ".concat(ThirdUser.credito, " euro");
+            cronologia.prepend(para);
         }
         else {
             alert("Chiama un numero valido");
@@ -246,38 +247,38 @@ document.addEventListener("DOMContentLoaded", function () {
     });
     infoChiam.addEventListener('click', function () {
         if (+telefono.value === FirstUser.numeroTelefono) {
-            var para1 = document.createElement("p");
-            para1.innerText = "Hai effettuato ".concat(FirstUser.numeroChiamate, " chiamate");
-            cronologia.appendChild(para1);
+            var para_1 = document.createElement("p");
+            para_1.innerText = "Hai effettuato ".concat(FirstUser.numeroChiamate, " chiamate");
+            cronologia.prepend(para_1);
         }
         else if (+telefono.value === SecondUser.numeroTelefono) {
-            var para1 = document.createElement("p");
-            para1.innerText = "Hai effettuato ".concat(SecondUser.numeroChiamate, " chiamate");
-            cronologia.appendChild(para1);
+            var para_2 = document.createElement("p");
+            para_2.innerText = "Hai effettuato ".concat(SecondUser.numeroChiamate, " chiamate");
+            cronologia.prepend(para_2);
         }
         else if (+telefono.value === ThirdUser.numeroTelefono) {
-            var para1 = document.createElement("p");
-            para1.innerText = "Hai effettuato ".concat(ThirdUser.numeroChiamate, " chiamate");
-            cronologia.appendChild(para1);
+            var para_3 = document.createElement("p");
+            para_3.innerText = "Hai effettuato ".concat(ThirdUser.numeroChiamate, " chiamate");
+            cronologia.prepend(para_3);
         }
     });
     azzera.addEventListener("click", function () {
         if (+telefono.value === FirstUser.numeroTelefono) {
-            var para1 = document.createElement("p");
-            para1.innerText = "Hai azzerato le chiamate";
-            cronologia.appendChild(para1);
+            var para_4 = document.createElement("p");
+            para_4.innerText = "Hai azzerato le chiamate";
+            cronologia.prepend(para_4);
             FirstUser.azzeraChiamate();
         }
         else if (+telefono.value === SecondUser.numeroTelefono) {
-            var para1 = document.createElement("p");
-            para1.innerText = "Hai azzerato le chiamate";
-            cronologia.appendChild(para1);
+            var para_5 = document.createElement("p");
+            para_5.innerText = "Hai azzerato le chiamate";
+            cronologia.prepend(para_5);
             SecondUser.azzeraChiamate();
         }
         else if (+telefono.value === ThirdUser.numeroTelefono) {
-            var para1 = document.createElement("p");
-            para1.innerText = "Hai azzerato le chiamate";
-            cronologia.appendChild(para1);
+            var para_6 = document.createElement("p");
+            para_6.innerText = "Hai azzerato le chiamate";
+            cronologia.prepend(para_6);
             ThirdUser.azzeraChiamate();
         }
     });
