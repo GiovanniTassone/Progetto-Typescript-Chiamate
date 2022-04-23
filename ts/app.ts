@@ -203,14 +203,14 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   inoltra.addEventListener('click', function (){
-      if (+telefono.value === FirstUser.numeroTelefono && +chiamato.value !== 404) {
-      FirstUser.chiamata(+secondi.value)
+      if (+telefono.value === FirstUser.numeroTelefono && +chiamato.value !== 404 && +chiamato.value >= 0) {
+      FirstUser.chiamata(Math.abs(+secondi.value))
       console.log(FirstUser);
-    } else if (+telefono.value === SecondUser.numeroTelefono && +chiamato.value !== 404) {
-      SecondUser.chiamata(+secondi.value);
+    } else if (+telefono.value === SecondUser.numeroTelefono && +chiamato.value !== 404 && +chiamato.value >= 0) {
+      SecondUser.chiamata(Math.abs(+secondi.value));
       console.log(SecondUser);
-    } else if (+telefono.value === ThirdUser.numeroTelefono && +chiamato.value !== 404) {
-      ThirdUser.chiamata(+secondi.value)
+    } else if (+telefono.value === ThirdUser.numeroTelefono && +chiamato.value !== 404 && +chiamato.value >= 0) {
+      ThirdUser.chiamata(Math.abs(+secondi.value))
       console.log(ThirdUser);
     }else if (+telefono.value === FirstUser.numeroTelefono && +chiamato.value === 404){
       FirstUser.numero404(FirstUser.credito)
@@ -227,6 +227,8 @@ document.addEventListener("DOMContentLoaded", function () {
       let para2 = document.createElement("p");
       para2.innerText = `Il tuo credito residuo è di ${ThirdUser.credito} euro`;
       cronologia.appendChild(para2);
+    }else {
+      alert("Chiama un numero valido")
     }
   })
   infoChiam.addEventListener('click', function () {
