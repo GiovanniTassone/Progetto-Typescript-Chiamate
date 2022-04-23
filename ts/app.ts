@@ -114,19 +114,19 @@ document.addEventListener("DOMContentLoaded", function () {
     if (+telefono.value === FirstUser.numeroTelefono) {
       FirstUser.ricarica(10);
       para = document.createElement("p");
-      para.innerText = "Hai aggiunto 10 euro al tuo saldo!";
+      para.innerText = `Hai aggiunto 10 euro al tuo saldo! Ora il tuo saldo è di ${FirstUser.credito} euro`;
       cronologia.prepend(para);
       console.log(FirstUser);
     } else if (+telefono.value === SecondUser.numeroTelefono) {
       SecondUser.ricarica(10);
       para = document.createElement("p");
-      para.innerText = "Hai aggiunto 10 euro al tuo saldo!";
+      para.innerText = `Hai aggiunto 10 euro al tuo saldo! Ora il tuo saldo è di ${SecondUser.credito} euro`;
       cronologia.prepend(para);
       console.log(SecondUser);
     } else if (+telefono.value === ThirdUser.numeroTelefono) {
       ThirdUser.ricarica(10);
       para = document.createElement("p");
-      para.innerText = "Hai aggiunto 10 euro al tuo saldo!";
+      para.innerText = `Hai aggiunto 10 euro al tuo saldo! Ora il tuo saldo è di ${ThirdUser.credito} euro`;
       cronologia.prepend(para);
       console.log(ThirdUser);
     } else {
@@ -137,19 +137,19 @@ document.addEventListener("DOMContentLoaded", function () {
     if (+telefono.value === FirstUser.numeroTelefono) {
       FirstUser.ricarica(20);
       para = document.createElement("p");
-      para.innerText = "Hai aggiunto 20 euro al tuo saldo!";
+      para.innerText = `Hai aggiunto 20 euro al tuo saldo! Ora il tuo saldo è di ${FirstUser.credito} euro`;
       cronologia.prepend(para);
       console.log(FirstUser);
     } else if (+telefono.value === SecondUser.numeroTelefono) {
       SecondUser.ricarica(20);
       para = document.createElement("p");
-      para.innerText = "Hai aggiunto 20 euro al tuo saldo!";
+      para.innerText = `Hai aggiunto 20 euro al tuo saldo! Ora il tuo saldo è di ${SecondUser.credito} euro`;
       cronologia.prepend(para);
       console.log(SecondUser);
     } else if (+telefono.value === ThirdUser.numeroTelefono) {
       ThirdUser.ricarica(20);
       para = document.createElement("p");
-      para.innerText = "Hai aggiunto 20 euro al tuo saldo!";
+      para.innerText = `Hai aggiunto 20 euro al tuo saldo! Ora il tuo saldo è di ${ThirdUser.credito} euro`;
       cronologia.prepend(para);
       console.log(ThirdUser);
     } else {
@@ -160,19 +160,19 @@ document.addEventListener("DOMContentLoaded", function () {
     if (+telefono.value === FirstUser.numeroTelefono) {
       FirstUser.ricarica(50);
       para = document.createElement("p");
-      para.innerText = "Hai aggiunto 50 euro al tuo saldo!";
+      para.innerText = `Hai aggiunto 50 euro al tuo saldo! Ora il tuo saldo è di ${FirstUser.credito} euro`;
       cronologia.prepend(para);
       console.log(FirstUser);
     } else if (+telefono.value === SecondUser.numeroTelefono) {
       SecondUser.ricarica(50);
       para = document.createElement("p");
-      para.innerText = "Hai aggiunto 50 euro al tuo saldo!";
+      para.innerText = `Hai aggiunto 50 euro al tuo saldo! Ora il tuo saldo è di ${SecondUser.credito} euro`;
       cronologia.prepend(para);
       console.log(SecondUser);
     } else if (+telefono.value === ThirdUser.numeroTelefono) {
       ThirdUser.ricarica(50);
       para = document.createElement("p");
-      para.innerText = "Hai aggiunto 50 euro al tuo saldo!";
+      para.innerText = `Hai aggiunto 50 euro al tuo saldo! Ora il tuo saldo è di ${ThirdUser.credito} euro`;
       cronologia.prepend(para);
       console.log(ThirdUser);
     } else {
@@ -183,19 +183,19 @@ document.addEventListener("DOMContentLoaded", function () {
     if (+telefono.value === FirstUser.numeroTelefono) {
       FirstUser.ricarica(100);
       para = document.createElement("p");
-      para.innerText = "Hai aggiunto 100 euro al tuo saldo!";
+      para.innerText = `Hai aggiunto 100 euro al tuo saldo! Ora il tuo saldo è di ${FirstUser.credito} euro`;
       cronologia.prepend(para);
       console.log(FirstUser);
     } else if (+telefono.value === SecondUser.numeroTelefono) {
       SecondUser.ricarica(100);
       para = document.createElement("p");
-      para.innerText = "Hai aggiunto 100 euro al tuo saldo!";
+      para.innerText = `Hai aggiunto 100 euro al tuo saldo! Ora il tuo saldo è di ${SecondUser.credito} euro`;
       cronologia.prepend(para);
       console.log(SecondUser);
     } else if (+telefono.value === ThirdUser.numeroTelefono) {
       ThirdUser.ricarica(100);
       para = document.createElement("p");
-      para.innerText = "Hai aggiunto 100 euro al tuo saldo!";
+      para.innerText = `Hai aggiunto 100 euro al tuo saldo! Ora il tuo saldo è di ${ThirdUser.credito} euro`;
       cronologia.prepend(para);
       console.log(ThirdUser);
     } else {
